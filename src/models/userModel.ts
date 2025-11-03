@@ -1,4 +1,4 @@
-import { pool } from "../dt.js";
+import { pool } from "../dt";
 
 export const userModel = {
   async getAllUsers() {

@@ -1,14 +1,15 @@
 // import express from "express";
 import express = require("express");
+import cors from "cors";
+import router from "./routes/routes";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
+app.use(cors());
 app.use(express.json());
 
-app.get("/", (req: express.Request, res: express.Response) => {
-  res.send("Hello from TypeScript + Express!");
-});
+app.use("/", router);
 
 // Start server
 app.listen(PORT, () => {
